@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "add_badge",
+    "dashboard",
+    "accounts",
 ]
 
 MIDDLEWARE = [
