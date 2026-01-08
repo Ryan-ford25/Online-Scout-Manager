@@ -25,20 +25,12 @@ def request_badge(request, badge_id):
 @login_required
 def approve_badge_request(request, request_id):
     badge_request = get_object_or_404(BadgeRequest, id=request_id)
-    badge_request.status = "approved"
-    badge_request.save()
-
-    ScoutBadge.objects.get_or_create(
-        scout=badge_request.scout,
-        badge=badge_request.badge
-    )
-
+    badge_request.approve()
     return redirect("dashboard:leader")
 
 @login_required
 def reject_badge_request(request, request_id):
     badge_request = get_object_or_404(BadgeRequest, id=request_id)
-    badge_request.status = "rejected"
-    badge_request.save()
+    badge_request.reject()
 
     return redirect("dashboard:leader")

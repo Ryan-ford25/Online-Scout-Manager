@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models, transaction
 from django.contrib.auth.models import User
 
 # Create your models here.
@@ -46,6 +46,22 @@ class BadgeRequest(models.Model):
     )
     note = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def approve(self):
+        if self.status == "approved":
+            self.save(update_fields = ["status"])
+
+        ScoutBadge.objects.get_or_create(
+            scout = self.scout,
+            badge = self.badge
+        )
+
+    def reject(self):
+        if self.status == "rejected":
+            return
+        
+        self.status = "rejected"
+        self.save(update_fields=["status"])
 
     def __str__(self):
         return f"{self.scout.username} → {self.badge.name}"
