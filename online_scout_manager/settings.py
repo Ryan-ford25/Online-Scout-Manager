@@ -53,6 +53,27 @@ INSTALLED_APPS = [
     "dashboard",
 ]
 
+ACCOUNT_AUTHENTICATION_METHOD = "username"
+
+ACCOUNT_USERNAME_REQUIRED = True
+
+ACCOUNT_EMAIL_REQUIRED = False
+
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
+ACCOUNT_USER_MODEL_USERNAME_FIELD = "username"
+
+ACCOUNT_FORMS = {
+    'signup': 'accounts.forms.NewSignupForm',
+}
+
+ACCOUNT_ADAPTER = "accounts.adapters.CustomAccountAdapter"
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_SIGNUP_REDIRECT_URL = '/signup/redirect/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -141,3 +162,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
