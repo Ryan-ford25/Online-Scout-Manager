@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container" style="max-width: 900px; margin: auto; padding: 20px;">
+
+    <h2>Leader Dashboard</h2>
+    <p>Welcome, {{ user.first_name }}! Manage scouts, badges, and approvals.</p>
+
+    <hr>
+
+    <!-- BADGE REQUESTS -->
+    <h3>Pending Badge Requests</h3>
+
+    {% if badge_requests %}
+        <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="text-align:left; padding: 8px;">Scout</th>
+                <th style="text-align:left; padding: 8px;">Badge</th>
+                <th style="text-align:left; padding: 8px;">Action</th>
+            </tr>
+
+            {% for req in badge_requests %}
+            <tr style="border-bottom: 1px solid #ddd;">
+                <td style="padding: 8px;">{{ req.user.get_full_name }}</td>
+                <td style="padding: 8px;">{{ req.badge.name }}</td>
+                <td style="padding: 8px;">
+                    <a href="{% url 'dashboard:approve_badge' req.id %}" class="btn btn-success">Approve</a>
+                    <a href="{% url 'dashboard:deny_badge' req.id %}" class="btn btn-danger">Deny</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No pending badge requests.</p>
+    {% endif %}
+
+    <hr>
+
+    <!-- SCOUT LIST -->
+    <h3>Scouts</h3>
+
+    {% if scouts %}
+        <ul>
+            {% for scout in scouts %}
+                <li>
+                    <a href="{% url 'dashboard:view_scout' scout.id %}">
+                        {{ scout.get_full_name }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No scouts found.</p>
+    {% endif %}
+
+</div>
+
+<h2>Pending Badge Requests</h2>
+
+{% for req in requests %}
+    <p>
+        <strong>{{ req.scout.username }}</strong> requested
+        <strong>{{ req.badge.name }}</strong>
+
+        <a href="{% url 'approve_badge_request' req.id %}">Approve</a>
+        <a href="{% url 'reject_badge_request' req.id %}">Reject</a>
+    </p>
+{% empty %}
+    <p>No pending requests.</p>
+{% endfor %}
+
+{% endblock %}

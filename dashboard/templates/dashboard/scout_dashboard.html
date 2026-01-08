@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container" style="max-width: 800px; margin: auto; padding: 20px;">
+
+    <h2>Welcome, {{ user.first_name }}!</h2>
+    <p>Your Scout Dashboard</p>
+
+    <hr>
+
+    <!-- FEATURED BADGES -->
+    <h3>Featured Badges</h3>
+    {% if featured_badges %}
+        <div style="display: flex; gap: 20px;">
+            {% for badge in featured_badges %}
+                <div style="text-align: center;">
+                    <img src="{{ badge.icon.url }}" alt="{{ badge.name }}" style="width: 80px; height: 80px;">
+                    <p>{{ badge.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No featured badges yet.</p>
+    {% endif %}
+
+    <hr>
+
+    <!-- OWNED BADGES -->
+    <h3>Your Earned Badges</h3>
+    {% if owned_badges %}
+        <ul>
+            {% for badge in owned_badges %}
+                <li>{{ badge.name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have not earned any badges yet.</p>
+    {% endif %}
+
+    <hr>
+</div>
+{% endblock %}

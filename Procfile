@@ -1,0 +1,1 @@
+web: gunicorn online_scout_manager.wsgi
