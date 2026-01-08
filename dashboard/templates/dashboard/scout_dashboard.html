@@ -28,10 +28,11 @@
 
     <!-- OWNED BADGES -->
     <h3>Your Earned Badges</h3>
-    {% if owned_badges %}
+    {% if earned_badges %}
         <ul>
-            {% for badge in owned_badges %}
-                <li>{{ badge.name }}</li>
+            {% for earned in earned_badges %}
+                <li>{{ earned.badge.name }}</li>
+                <img src="{{ badge.image.url }}" alt="{{ badge.name }}" style="width: 120px; height: 120px; object-fit: contain;">
             {% endfor %}
         </ul>
     {% else %}
