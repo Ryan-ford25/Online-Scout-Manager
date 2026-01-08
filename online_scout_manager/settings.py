@@ -53,11 +53,9 @@ INSTALLED_APPS = [
     "dashboard",
 ]
 
-ACCOUNT_AUTHENTICATION_METHOD = "username"
+ACCOUNT_LOGIN_METHODS = {"username"}
 
-ACCOUNT_USERNAME_REQUIRED = True
-
-ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_SIGNUP_FIELDS = ['email', 'username*', 'password1*', 'password2*']
 
 ACCOUNT_EMAIL_VERIFICATION = "none"
 
