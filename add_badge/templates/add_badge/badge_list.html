@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    {% for badge in badges %}
+        <div style="width: 150px; text-align: center;">
+            
+            {% if badge.image %}
+                <img src="{{ badge.image.url }}" 
+                     alt="{{ badge.name }}" 
+                     style="width: 120px; height: 120px; object-fit: contain;">
+            {% else %}
+                <div style="width:120px; height:120px;"></div>
+            {% endif %}
+
+            <p>{{ badge.name }}</p>
+        </div>
+        <a href="{% url 'request_badge' badge.id %}" class="btn btn-sm btn-primary">
+            Request badge
+        </a>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}
