@@ -20,14 +20,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('summernote/', include('django_summernote.urls')),
     path('', include('blog.urls'), name = "blog-urls"),
     path('', include('accounts.urls'), name = 'accounts-urls'),
     path('', include("add_badge.urls"), name='addbadge-urls'),
     path("accounts/", include("allauth.urls")),
     path('', include("dashboard.urls"), name = 'dashboard-urls'),
     path('admin/', admin.site.urls),
-
+    path('summernote/', include('django_summernote.urls')),
 
 ]
 

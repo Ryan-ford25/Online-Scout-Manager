@@ -7,12 +7,12 @@
             "slug": "getting-the-climber-badge",
             "author": 1,
             "content": "<p>Im looking at the requirements for the climber badge and I need help understanding the different ropes used, can anyone help with material to use.</p>",
-            "created_on": "",
+            "created_on": "2023-07-14T13:58:53.884Z",
             "status": 1,
-            "excerpt": "",
-            "updated_on": "2026-01-08T20:15:28.579Z"
+            "excerpt": "Requirements for badge",
+            "updated_on": "2023-09-13T09:43:19.754Z"
         }
-    }
+    },
 
     {
         "model": "blog.post",
@@ -22,25 +22,10 @@
             "slug": "next-troop-meeting",
             "author": 1,
             "content": "<p>Hi all I was wondering what I should be bringing to the next troop meeting I understand we're backwards cooking, would I need to bring any specific items.</p>",
-            "created_on": "",
+            "created_on": "2023-07-14T13:58:53.884Z",
             "status": 1,
-            "excerpt": "",
-            "updated_on": "2026-01-08T20:15:28.579Z"
-        }
-    }
-
-    {
-        "model": "blog.post",
-        "pk": null,
-        "fields": {
-            "title": "Next Trop meeting",
-            "slug": "next-troop-meeting",
-            "author": 1,
-            "content": "<p>Hi all I was wondering what I should be bringing to the next troop meeting I understand we're backwards cooking, would I need to bring any specific items.</p>",
-            "created_on": "",
-            "status": 1,
-            "excerpt": "",
-            "updated_on": "2026-01-08T20:15:28.579Z"
+            "excerpt": "Anything specific that should be brought to next weeks meeting",
+            "updated_on": "2023-09-13T09:43:19.754Z"
         }
     }
 ]
