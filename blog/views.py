@@ -8,8 +8,8 @@ from .models import Post
 class PostList(generic.ListView):
     queryset = Post.objects.all()
     template = "post_list.html"
-    post_detail(request, slug)
     paginate_by = 6
+
 
 def post_detail(request, slug):
     """
