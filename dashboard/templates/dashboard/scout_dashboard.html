@@ -32,7 +32,7 @@
         <ul>
             {% for earned in earned_badges %}
                 <li>{{ earned.badge.name }}</li>
-                <img src="{{ badge.image.url }}" alt="{{ badge.name }}" style="width: 120px; height: 120px; object-fit: contain;">
+                <img src="{{ earned.badge.image.url }}" alt="{{ badge.name }}" style="width: 120px; height: 120px; object-fit: contain;">
             {% endfor %}
         </ul>
     {% else %}

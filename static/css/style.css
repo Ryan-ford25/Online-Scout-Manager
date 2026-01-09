@@ -55,6 +55,12 @@ nav{
     height: auto;
 }
 
+.name {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
 .author {
     color: white;
     margin: 4px;
@@ -100,6 +106,12 @@ nav{
     color: #445261;
 }
 
+.badge-link {
+    text-decoration: none;
+    color: #445261;
+    margin: auto;
+    display : flex;
+}
 .post-link:hover,
 .page-link {
     color: #E84610;

@@ -2,25 +2,41 @@
 
 {% block content %}
 
-<div style="display: flex; flex-wrap: wrap; gap: 20px;">
-    {% for badge in badges %}
-        <div style="width: 150px; text-align: center;">
-            
-            {% if badge.image %}
-                <img src="{{ badge.image.url }}" 
-                     alt="{{ badge.name }}" 
-                     style="width: 120px; height: 120px; object-fit: contain;">
-            {% else %}
-                <div style="width:120px; height:120px;"></div>
-            {% endif %}
+<div class="container-fluid">
+    <div class="row">
 
-            <p>{{ badge.name }}</p>
+        <!-- Badge List -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for badge in badges %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="image-container">
+                                <div class="image-flash">
+                                    <p class="name">Badge: {{ badge.name }}</p>
+                                </div>
+                            </div>
+                            <a href="#" class="badge-link">
+                                <h2 class="card-title">
+                                    <img src="{{ badge.image.url }}" width="200px", height="200px"></h2>
+                            </a>
+
+                            <hr />
+                            <p class="card-text text-muted h6">{{ badge.category}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
         </div>
-        <a href="{% url 'request_badge' badge.id %}" class="btn btn-sm btn-primary">
-            Request badge
-        </a>
-    {% endfor %}
-</div>
+    </div>
 
 
 
