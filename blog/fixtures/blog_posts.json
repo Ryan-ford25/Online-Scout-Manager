@@ -1,0 +1,46 @@
+[
+    {
+        "model": "blog.post",
+        "pk": null,
+        "fields": {
+            "title": "Getting the Climber badge",
+            "slug": "getting-the-climber-badge",
+            "author": 1,
+            "content": "<p>Im looking at the requirements for the climber badge and I need help understanding the different ropes used, can anyone help with material to use.</p>",
+            "created_on": "",
+            "status": 1,
+            "excerpt": "",
+            "updated_on": "2026-01-08T20:15:28.579Z"
+        }
+    }
+
+    {
+        "model": "blog.post",
+        "pk": null,
+        "fields": {
+            "title": "Next Troop meeting",
+            "slug": "next-troop-meeting",
+            "author": 1,
+            "content": "<p>Hi all I was wondering what I should be bringing to the next troop meeting I understand we're backwards cooking, would I need to bring any specific items.</p>",
+            "created_on": "",
+            "status": 1,
+            "excerpt": "",
+            "updated_on": "2026-01-08T20:15:28.579Z"
+        }
+    }
+
+    {
+        "model": "blog.post",
+        "pk": null,
+        "fields": {
+            "title": "Next Trop meeting",
+            "slug": "next-troop-meeting",
+            "author": 1,
+            "content": "<p>Hi all I was wondering what I should be bringing to the next troop meeting I understand we're backwards cooking, would I need to bring any specific items.</p>",
+            "created_on": "",
+            "status": 1,
+            "excerpt": "",
+            "updated_on": "2026-01-08T20:15:28.579Z"
+        }
+    }
+]
