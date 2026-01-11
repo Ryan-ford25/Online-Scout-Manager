@@ -34,3 +34,4 @@ def reject_badge_request(request, request_id):
     badge_request.reject()
 
     return redirect("dashboard:leader")
+

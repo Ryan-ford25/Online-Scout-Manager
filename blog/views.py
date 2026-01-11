@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from django.contrib import messages
+from django.utils.text import slugify
 
 # Create your views here.
 
@@ -12,6 +14,24 @@ class PostList(generic.ListView):
     queryset = Post.objects.all()
     template = "post_list.html"
     paginate_by = 6
+
+@login_required
+def create_post(request):
+    if request.method == "POST":
+        post_form = PostForm(data=request.POST)
+        if post_form.is_valid():
+            post = post_form.save(commit = False)
+            post.author = request.user
+            post.slug = slugify(post.title)
+            post.save()
+            messages.add_message(
+                request, messages.SUCCESS, 'Your Post has been uploaded.'
+                )
+            return redirect("blog/")
+        
+    post_form = PostForm()
+        
+    return render(request, "blog/create_post.html", {"post_form": post_form})
 
 
 def post_detail(request, slug):
