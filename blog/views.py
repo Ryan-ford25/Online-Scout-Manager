@@ -39,9 +39,10 @@ def post_detail(request, slug):
             comment = comment_form.save(commit=False)
             comment.author = request.user
             comment.post = post
+            comment.approved = True
             comment.save()
             messages.add_message(
-                request, messages.SUCCESS, 'Comment submitted and awaiting approval'
+                request, messages.SUCCESS, 'Your comment has been uploaded successfully'
             )
     
     comment_form = CommentForm()

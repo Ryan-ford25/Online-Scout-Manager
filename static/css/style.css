@@ -175,3 +175,8 @@ nav{
 .approval {
     color: rgb(222, 146, 168);
 }
+
+.blog-img{
+    height:100px;
+    width:100px;
+}
