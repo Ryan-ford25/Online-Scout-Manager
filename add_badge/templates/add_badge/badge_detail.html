@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>{{badge.name}}</h2>
-<p>This is where the badge requirements go.</p>
+<div>
+    <h2>{{ badge.name }} Badge</h2>
+</div>
+{% for requirement in badge.requirements.all %}
+<div>
+    <ul>
+        <li>{{requirement.text}}</li>
+        <li></li>
+    </ul>
+{% endfor %}
+</div>
 
 {% endblock %}

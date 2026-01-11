@@ -16,7 +16,7 @@ class Badge(models.Model):
 
 class BadgeRequirements(models.Model):
     badge = models.ForeignKey(Badge, on_delete=models.CASCADE, related_name = "requirements")
-    description = models.CharField(max_length = 255)
+    text = models.CharField(max_length = 255)
     order = models.PositiveIntegerField(default=1)
 
     def __str__(self):

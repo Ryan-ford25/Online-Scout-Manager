@@ -10,7 +10,6 @@ class BadgeList(generic.ListView):
     template_name = "badge_list.html"
     context_object_name = 'badges'
 
-
 @login_required
 def request_badge(request, badge_id):
     badge = get_object_or_404(Badge, id=badge_id)
@@ -38,10 +37,12 @@ def reject_badge_request(request, request_id):
 
 def badge_detail(request, slug):
     badge = get_object_or_404(Badge, slug=slug)
+    requirement = badge.requirements.all()
     return render(
         request,
         "add_badge/badge_detail.html",
         {
             "badge": badge,
+            "requirement":requirement,
         },
     )
