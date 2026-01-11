@@ -7,7 +7,7 @@ class Badge(models.Model):
     name = models.CharField(max_length=100, unique=True)
     description = models.TextField()
     category = models.CharField(max_length=100, blank=True)
-    image = models.ImageField(upload_to='badge_images/', blank=True, null=True)
+    image = CloudinaryField("image")
 
     def __str__(self):
         return f"{self.name} badge"
