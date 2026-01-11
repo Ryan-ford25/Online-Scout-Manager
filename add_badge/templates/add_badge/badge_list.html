@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block content %}
 
 <div class="container-fluid">
@@ -17,12 +16,12 @@
                                     <p class="name">Badge: {{ badge.name }}</p>
                                 </div>
                             </div>
-                            <a href="#" class="badge-link">
+                            <a href="{% url 'badge_detail' badge.slug %}" class="badge-link">
                                 <h2 class="card-title">
                                     <img src="{{ badge.image.url }}" width="200px", height="200px"></h2>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ badge.category}}
+                            <p class="card-text text-muted h6"> Category | {{ badge.category }}
                             </p>
                         </div>
                     </div>

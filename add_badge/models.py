@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 class Badge(models.Model):
     name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length = 200, unique=True)
     description = models.TextField()
     category = models.CharField(max_length=100, blank=True)
     image = CloudinaryField("image")

@@ -35,3 +35,13 @@ def reject_badge_request(request, request_id):
 
     return redirect("dashboard:leader")
 
+
+def badge_detail(request, slug):
+    badge = get_object_or_404(Badge, slug=slug)
+    return render(
+        request,
+        "add_badge/badge_detail.html",
+        {
+            "badge": badge,
+        },
+    )
