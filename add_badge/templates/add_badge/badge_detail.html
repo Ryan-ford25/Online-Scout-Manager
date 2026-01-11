@@ -1,16 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 <div>
     <h2>{{ badge.name }} Badge</h2>
 </div>
+    <img src= {{badge.image.url}}>
 {% for requirement in requirement %}
-<div>
-    <ul>
-        <li>{{requirement.text}}</li>
-        <li></li>
-    </ul>
-{% endfor %}
+<div class = "grid text-center">
+    <div class="g-col-6">{{requirement.text}}</div>
 </div>
+{% endfor %}
+
 
 {% endblock %}
