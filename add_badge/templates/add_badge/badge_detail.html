@@ -1,16 +1,31 @@
 {% extends "base.html" %}
-{% load static %}
 {% block content %}
 
-<div>
-    <h2>{{ badge.name }} Badge</h2>
-</div>
-    <img src= {{badge.image.url}}>
-{% for requirement in requirement %}
-<div class = "grid text-center">
-    <div class="g-col-6">{{requirement.text}}</div>
-</div>
-{% endfor %}
+<div class="badge-page">
 
+    <div class="badge-header">
+        {% if badge.image %}
+            <img src="{{ badge.image.url }}" alt="{{ badge.name }}">
+        {% endif %}
+
+        <div class="badge-info">
+            <h1>{{ badge.name }}</h1>
+            <p>{{ badge.description }}</p>
+        </div>
+    </div>
+
+    <div class="badge-requirements-section">
+        <h2>Requirements</h2>
+
+        <ol class="badge-requirements">
+            {% for requirement in requirement %}
+                <li>{{ requirement.text }}</li>
+            {% empty %}
+                <li>No requirements listed.</li>
+            {% endfor %}
+        </ol>
+    </div>
+
+</div>
 
 {% endblock %}

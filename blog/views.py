@@ -13,7 +13,7 @@ from django.utils.text import slugify
 class PostList(generic.ListView):
     queryset = Post.objects.all()
     template = "post_list.html"
-    paginate_by = 6
+    paginate_by = 12
 
 @login_required
 def create_post(request):

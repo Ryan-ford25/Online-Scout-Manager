@@ -180,3 +180,52 @@ nav{
     height:100px;
     width:100px;
 }
+
+.badge-page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.badge-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.badge-header img {
+    width: 120px;
+    height: auto;
+}
+
+.badge-info h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.badge-info p {
+    margin-top: 10px;
+    color: #555;
+}
+
+.badge-requirements-section {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.badge-requirements {
+    padding-left: 20px;
+}
+
+.badge-requirements li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .badge-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
