@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
 <div class="container-fluid">
@@ -12,14 +13,15 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                <a href="{% url 'badge_detail' badge.slug %}" class="badge-link">
+                                    <h2 class="card-title">
+                                        <img class="scale" src="{{ badge.image.url }}"></h2>
+                            </a>
                                 <div class="image-flash">
                                     <p class="name">Badge: {{ badge.name }}</p>
                                 </div>
                             </div>
-                            <a href="{% url 'badge_detail' badge.slug %}" class="badge-link">
-                                <h2 class="card-title">
-                                    <img src="{{ badge.image.url }}" width="200px", height="200px"></h2>
-                            </a>
+
                             <hr />
                             <p class="card-text text-muted h6"> Category | {{ badge.category }}
                             </p>

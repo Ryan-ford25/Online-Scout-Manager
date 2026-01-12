@@ -10,27 +10,17 @@
 
     <!-- BADGE REQUESTS -->
     <h3>Pending Badge Requests</h3>
+    {% for request in requests %}
+    <p>
+        {{ request.scout.username }} requested {{ request.badge.name }}
+    </p>
 
-    {% if badge_requests %}
-        <table style="width: 100%; border-collapse: collapse;">
-            <tr>
-                <th style="text-align:left; padding: 8px;">Scout</th>
-                <th style="text-align:left; padding: 8px;">Badge</th>
-                <th style="text-align:left; padding: 8px;">Action</th>
-            </tr>
-
-            {% for req in requests %}
-            <p>
-                <strong>{{ req.scout.username }}</strong> requested
-                <strong>{{ req.badge.name }}</strong>
-                <a href="{% url 'approve_badge_request' req.id %}">Approve</a>
-                <a href="{% url 'reject_badge_request' req.id %}">Reject</a>
-            </p>#
-            {% endfor %}
-        </table>
-    {% else %}
-        <p>No pending badge requests.</p>
-    {% endif %}
+    <a href="{% url 'approve_badge_request' request.id %}">Approve</a>
+    <a href="{% url 'reject_badge_request' request.id %}">Reject</a>
+    
+    {% empty %}
+    <p>No pending badge requests.</p>
+    {% endfor %}
 
     <hr>
 

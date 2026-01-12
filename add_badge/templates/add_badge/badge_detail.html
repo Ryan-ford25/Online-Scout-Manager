@@ -18,13 +18,38 @@
         <h2>Requirements</h2>
 
         <ol class="badge-requirements">
-            {% for requirement in requirement %}
+            {% for requirement in requirements %}
                 <li>{{ requirement.text }}</li>
             {% empty %}
                 <li>No requirements listed.</li>
             {% endfor %}
         </ol>
     </div>
+
+    <div>
+        {% if user.is_authenticated and user.profile.role == "scout" %}
+        
+        {% if has_badge %}
+        <button class="badge-btn earned" disabled>
+            Badge Earned
+        </button>
+        
+        {% elif has_pending_request %}
+        <button class="badge-btn pending" disabled>
+            Request Pending
+        </button>
+
+        {% else %}
+        <form method="post" action="{% url 'request_badge' badge.id %}">
+            {% csrf_token %}
+            <button type="submit" class="badge-btn request">
+                Request Badge
+            </button>
+        </form>
+        {% endif %}
+        {% endif %}
+    </div>
+
 
 </div>
 

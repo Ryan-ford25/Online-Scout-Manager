@@ -213,6 +213,7 @@ nav{
     background-color: #f7f7f7;
     padding: 20px;
     border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .badge-requirements {
@@ -221,6 +222,13 @@ nav{
 
 .badge-requirements li {
     margin-bottom: 10px;
+}
+
+.badge-list{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 600px) {
