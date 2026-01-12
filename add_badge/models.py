@@ -51,8 +51,10 @@ class BadgeRequest(models.Model):
 
     def approve(self):
         if self.status == "approved":
-            self.save(update_fields = ["status"])
             return
+        
+        self.status = "approved"
+        self.save(update_fields=["status"])
 
         ScoutBadge.objects.get_or_create(
             scout = self.scout,
