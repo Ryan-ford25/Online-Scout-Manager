@@ -15,14 +15,19 @@ class BadgeList(generic.ListView):
 def request_badge(request, badge_id):
     badge = get_object_or_404(Badge, id=badge_id)
 
-    BadgeRequest.objects.get_or_create(
+    badge_request, created = BadgeRequest.objects.get_or_create(
         scout=request.user,
         badge=badge
     )
+
+    if not created and badge_request.status == "rejected":
+        badge_request.status = "pending"
+        badge_request.save(update_fields=["status"])
+
     messages.add_message(
         request, messages.SUCCESS, 'Badge request submitted.'
         )
-    return redirect("dashboard:scout")
+    return redirect("badge_detail", slug=badge.slug)
 
 @login_required
 def approve_badge_request(request, request_id):
@@ -57,7 +62,6 @@ def badge_detail(request, slug):
             status="pending"
         ).exists()
 
-        
     return render(
         request,
         "add_badge/badge_detail.html",
