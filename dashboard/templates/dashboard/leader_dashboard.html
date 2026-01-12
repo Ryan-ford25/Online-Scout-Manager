@@ -15,8 +15,8 @@
         {{ request.scout.username }} requested {{ request.badge.name }}
     </p>
 
-    <a class="btn-signup" href="{% url 'approve_badge_request' request.id %}">Approve</a>
-    <a class ="btn-signup" href="{% url 'reject_badge_request' request.id %}">Reject</a>
+    <a class="btn-signup btn" href="{% url 'approve_badge_request' request.id %}">Approve</a>
+    <a class ="btn-signup btn" href="{% url 'reject_badge_request' request.id %}">Reject</a>
     
     {% empty %}
     <p>No pending badge requests.</p>
@@ -26,9 +26,14 @@
 
     <!-- SCOUT LIST -->
     <h3>Scouts</h3>
+    <p>No scouts found.</p>
 
-        <p>No scouts found.</p>
-
+    <hr>
+    <!-- Managing Badges -->
+     <h3>Manage Badges</h3>
+     <a href="{% url 'add_badge' %}" class="btn btn-signup">Add Badge</a>
+     <button type="button" class="btn-signup">Edit current Badge</button>
+     <button type="button" class="btn-signup">Delete Badge</button>
 </div>
 
 {% endblock %}

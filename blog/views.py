@@ -30,7 +30,6 @@ def create_post(request):
             return redirect("blog/")
         
     post_form = PostForm()
-        
     return render(request, "blog/create_post.html", {"post_form": post_form})
 
 

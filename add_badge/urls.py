@@ -7,4 +7,5 @@ urlpatterns = [
     path("approve/<int:request_id>/", views.approve_badge_request, name="approve_badge_request"),
     path("reject/<int:request_id>/", views.reject_badge_request, name="reject_badge_request"),
     path("badge/<slug:slug>/", views.badge_detail, name = "badge_detail"),
+    path("badges/add/", views.add_badge, name = "add_badge"),
 ]

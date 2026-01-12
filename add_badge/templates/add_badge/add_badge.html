@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Add New Badge</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2>Create Badge</h2>
+    {{ badge_form.as_p }}
+
+    <h2>Requirements</h2>
+    {{ formset.management_form }}
+    {% for req_form in formset %}
+    <div>
+        {{ req_form.as_p }}
+    </div>
+    {% endfor %}
+    
+    <button type="submit">Create Badge</button>
+</form>
+
+{% endblock %}
