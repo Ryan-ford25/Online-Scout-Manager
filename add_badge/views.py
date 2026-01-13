@@ -79,25 +79,25 @@ def badge_detail(request, slug):
 def add_badge(request):
     if request.method == "POST":
         badge_form = BadgeForm(request.POST, request.FILES)
-        formset = BadgeRequirementFormSet(request.POST)
+        requirements_formset = BadgeRequirementFormSet(request.POST)
 
-        if badge_form.is_valid() and formset.is_valid():
-            new = badge_form.save(commit= False)
-            new.slug = slugify(new.name)
-            new.save()
+        if badge_form.is_valid() and requirements_formset.is_valid():
+            new_badge = badge_form.save(commit= False)
+            new_badge.slug = slugify(new_badge.name)
+            new_badge.save()
 
-            # link the requirements to the badge
-            formset.instance = Badge
-            formset.save()
+            requirements_formset.instance = new_badge
+            requirements_formset.save()
 
             messages.add_message(
                 request, messages.SUCCESS, 'New badge created.'
             )
-            return redirect("badges/")
+            return redirect("badges")
+        
     badge_form = BadgeForm()
-    formset = BadgeRequirementFormSet()
+    requirements_formset = BadgeRequirementFormSet()
 
     return render(request, "add_badge/add_badge.html", {
-        "badge_form": badge_form,
-        "formset": formset,
+        "badge_form" : badge_form,
+        "requirements_formset" : requirements_formset,
         })
