@@ -14,4 +14,8 @@ def home(request):
 @login_required
 def leader_dashboard(request):
     requests = BadgeRequest.objects.filter(status="pending")
-    return render(request, "dashboard/leader_dashboard.html", {"requests": requests})
+    badges = Badge.objects.all()
+    return render(request, "dashboard/leader_dashboard.html", {
+        "requests": requests,
+        "badges": badges,
+        })

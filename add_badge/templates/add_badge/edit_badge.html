@@ -1,4 +1,4 @@
-{% extends "base.html" %} 
+{% extends 'base.html' %} 
 {% load static %} 
 {% block content %}
 
@@ -14,12 +14,13 @@
       {{ requirements_formset.management_form }} 
       {% for form in requirements_formset %}
       <div class="requirement-form">{{ form.as_p }}</div>
+
       {% endfor %}
 
       <!-- Hidden empty form template -->
       <div id="empty-form" style="display: none">
         <div class="requirement-form">
-          {{ requirements_formset.empty_form.as_p }}
+          {{ requirements_formset.empty_form.as_p}}
         </div>
       </div>
     </div>
@@ -28,11 +29,11 @@
       <button type="button" id="add-requirement" class="btn-signup">
         Add requirement
       </button>
-      <button type="submit" class="btn-signup">Create Badge</button>
+      <button type="submit" class="btn-signup">Save Changes</button>
     </div>
   </form>
 </div>
 
 <script src="{% static 'js/requirements.js' %}"></script>
-
 {% endblock %}
+

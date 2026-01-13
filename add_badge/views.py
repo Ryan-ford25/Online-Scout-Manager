@@ -1,11 +1,11 @@
-from django.shortcuts import render
 from django.views import generic
 from .models import Badge, BadgeRequest, BadgeRequirements, ScoutBadge
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.contrib import messages
 from .forms import BadgeForm, BadgeRequirementFormSet
 from django.utils.text import slugify
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 class BadgeList(generic.ListView):
@@ -101,3 +101,30 @@ def add_badge(request):
         "badge_form" : badge_form,
         "requirements_formset" : requirements_formset,
         })
+
+@login_required
+def edit_badge(request, badge_id):
+    badge = get_object_or_404(Badge, id=badge_id)
+
+    # Initialize forms with existing data
+    if request.method == "POST":
+        badge_form = BadgeForm(request.POST, request.FILES, instance=badge)
+        requirements_formset = BadgeRequirementFormSet(request.POST, instance=badge)
+
+        if badge_form.is_valid() and requirements_formset.is_valid():
+            updated_badge = badge_form.save(commit=False)
+            updated_badge.slug = slugify(updated_badge.name)
+            updated_badge.save()
+            requirements_formset.save()
+
+            messages.success(request, "Badge updated successfully!")
+            return redirect("badges")  # or wherever you want
+        
+    badge_form = BadgeForm(instance=badge)
+    requirements_formset = BadgeRequirementFormSet(instance=badge)
+
+    return render(request, "add_badge/edit_badge.html", {
+        "badge_form": badge_form,
+        "requirements_formset": requirements_formset,
+        "badge": badge,
+    })
