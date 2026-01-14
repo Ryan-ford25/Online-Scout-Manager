@@ -118,7 +118,7 @@ def edit_badge(request, badge_id):
             requirements_formset.save()
 
             messages.success(request, "Badge updated successfully!")
-            return redirect("badges")  # or wherever you want
+            return redirect("badges")
         
     badge_form = BadgeForm(instance=badge)
     requirements_formset = BadgeRequirementFormSet(instance=badge)
@@ -128,3 +128,10 @@ def edit_badge(request, badge_id):
         "requirements_formset": requirements_formset,
         "badge": badge,
     })
+
+def delete_badge(request, badge_id):
+    badge = get_object_or_404(Badge, id=badge_id)
+    
+    badge.delete()
+    messages.success(request, "The Badge has been deleted successfully!")
+    return redirect("badges")
