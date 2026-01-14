@@ -101,6 +101,12 @@ nav{
     z-index: 100;
 }
 
+.dashboard{
+    max-width: 900px; 
+    margin: auto; 
+    padding: 20px;
+}
+
 .post-link {
     text-decoration: none;
     color: #445261;
@@ -268,6 +274,7 @@ nav{
     border: 1px solid #ccc;
     font-size: 1rem;
 }
+
 
 @media (max-width: 600px) {
     .badge-header {

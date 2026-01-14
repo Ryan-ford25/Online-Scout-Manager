@@ -5,8 +5,9 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 
 for (let button of deleteButtons) {
   button.addEventListener("click", (e) => {
-    let BadgeId = e.target.getAttribute("badge_id");
-    deleteConfirm.href = `badges/delete/${BadgeId}/`;
+    const badgeId = button.dataset.badgeId;
+    console.log("Badge ID:", badgeId);                     // Logging the badge ID to console to see if the badge id is being retrieved.
+    deleteConfirm.href = `/badges/delete/${badgeId}/`;
     deleteModal.show();
   });
 }
