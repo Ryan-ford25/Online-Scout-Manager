@@ -10,4 +10,5 @@ urlpatterns = [
     path("badges/add/", views.add_badge, name = "add_badge"),
     path('badges/<int:badge_id>/edit/', views.edit_badge, name='edit_badge'),
     path("badges/delete/<int:badge_id>/", views.delete_badge, name="delete_badge"),
+    path("featured_badge/<int:scout_badge_id>/", views.featured_badges,name="featured_badge" ),
 ]

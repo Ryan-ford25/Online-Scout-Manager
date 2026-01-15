@@ -135,3 +135,25 @@ def delete_badge(request, badge_id):
     badge.delete()
     messages.success(request, "The Badge has been deleted successfully!")
     return redirect("badges")
+
+def featured_badges(request, scout_badge_id):
+    scout_badge = get_object_or_404(
+        ScoutBadge,
+        id = scout_badge_id,
+        scout = request.user,
+    )
+
+    if not scout_badge.featured:
+        featuredbadge_count = ScoutBadge.objects.filter(
+            scout = request.user,
+            featured = True
+        ).count()
+
+        if featuredbadge_count >= 3:
+            messages.error(request, "Only 3 badges can be featured at a time.")
+            return redirect("dashboard:scout")
+        
+    scout_badge.featured = not scout_badge.featured
+    scout_badge.save()
+
+    return redirect("dashboard:scout")

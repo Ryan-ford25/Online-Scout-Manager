@@ -12,12 +12,13 @@
     <!-- FEATURED BADGES -->
     <h3>Featured Badges</h3>
     {% if featured_badges %}
-        <div style="display: flex; gap: 20px;">
-            {% for badge in featured_badges %}
-                <div style="text-align: center;">
-                    <img src="{{ badge.icon.url }}" alt="{{ badge.name }}" style="width: 80px; height: 80px;">
-                    <p>{{ badge.name }}</p>
-                </div>
+        <div class="row">
+            {% for scout_badge in featured_badges %}
+            <div class="col-md-4 text-center">
+                <img src="{{ scout_badge.badge.image.url }}" class="img-fluid mb-2" width="100px">
+            </div>
+            {% empty %}
+            <p>No featured badges selected.</p>
             {% endfor %}
         </div>
     {% else %}
@@ -37,6 +38,16 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ earned.badge.name }}</h5>
                         <img src="{{ earned.badge.image.url }}" alt="{{ badge.name }}" width="100px">
+                        <form method="post" action="{% url 'featured_badge' earned.id %}">
+                            {% csrf_token %}
+                            <button class="btn btn-signup">
+                                {% if earned.featured %}
+                                Unfeature
+                                {% else %}
+                                Feature
+                                {% endif %}
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

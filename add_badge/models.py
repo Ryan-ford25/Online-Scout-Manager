@@ -74,6 +74,7 @@ class BadgeRequest(models.Model):
 class ScoutBadge(models.Model):
     scout = models.ForeignKey(User, on_delete=models.CASCADE)
     badge = models.ForeignKey("Badge", on_delete=models.CASCADE)
+    featured = models.BooleanField(default = False)
     awarded_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -5,8 +5,6 @@ class CustomAccountAdapter(DefaultAccountAdapter):
     
     def get_login_redirect_url(self, request):
         user = request.user
-
-
         profile = user.profile
         
         if profile.role == "scout":
