@@ -5,16 +5,15 @@
 {% block head_title %}{% trans "Sign Up" %}{% endblock head_title %}
 
 {% block content %}
-<h2 class="signup-title">{% trans "Create Your Account" %}</h2>
 
-<p>
-    {% blocktrans %}
-        Already have an account?  
+<form method="post" class="form-page" action="{% url 'account_signup' %}">
+    <h2 class="signup-title">{% trans "Create Your Account" %}</h2>
+    <p>
+        {% blocktrans %} 
+        Already have an account? 
         <a href="{{ login_url }}">Log in</a>.
-    {% endblocktrans %}
-</p>
-
-<form method="post" action="{% url 'account_signup' %}">
+        {% endblocktrans %}
+    </p>
     {% csrf_token %}
 
     <div class="form-section">

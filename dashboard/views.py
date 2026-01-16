@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from add_badge.models import ScoutBadge, BadgeRequest, Badge
+from accounts.models import Profile
 
 @login_required
 def scout_dashboard(request):
@@ -19,7 +20,10 @@ def home(request):
 def leader_dashboard(request):
     requests = BadgeRequest.objects.filter(status="pending")
     badges = Badge.objects.all()
+    scouts = Profile.objects.filter(role="scout").select_related("user")
+
     return render(request, "dashboard/leader_dashboard.html", {
         "requests": requests,
         "badges": badges,
+        "scouts": scouts,
         })

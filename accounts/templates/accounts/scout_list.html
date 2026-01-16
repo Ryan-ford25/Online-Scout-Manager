@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h2>Scout Patrol Assignment</h2>
+
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>Scout</th>
+            <th>Current Patrol</th>
+            <th>Assign Patrol</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for profile in scouts %}
+        <tr>
+            <td> {{ profile.user.username }}</td>
+            <td> {{ profile.patrol.patrols.names | default:"Unnasigned" }}</td>
+            <td>
+                <form method="post" action="{% url 'assign_patrol' profile.id %}">
+                    {% csrf_token %}
+                    <select name="patrol" class = "form-select form-select-sm">
+                        <option value="">---</option>
+                        {% for patrol in patrols %}
+                        <option value="{{ patrol.id }}" {% if profile.patrol == patrol %}selected{% endif %}>
+                            {{ patrol.name }}
+                        </option>
+                        {% endfor %}
+                    </select>
+                    <button class="btn btn-signup">Save</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

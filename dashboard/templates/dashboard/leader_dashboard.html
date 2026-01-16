@@ -27,7 +27,14 @@
 
     <!-- SCOUT LIST -->
     <h3>Scouts</h3>
-    <p>No scouts found.</p>
+    
+    {% if scouts %}
+    <ul>
+        {% for profile in scouts %}
+        <li>{{ profile.user.username }} <span class="text-muted">{{ profile.patrol.name | default:"Unnasigned" }}</span></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 
     <hr>
     <!-- Managing Badges -->

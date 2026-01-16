@@ -10,16 +10,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign In" %}</h3>
 
-            <p>{% blocktrans %}Welcome back to the 15th Dartford Scout groups online badge manager, please sign in...
-                If you have not yet created your free account you can create one here. <a class="link" href="{{ signup_url }}">sign up</a>
-                {% endblocktrans %}</p>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <form class="login" method="POST" action="{% url 'account_login' %}">
+            <form class="form-page" method="POST" action="{% url 'account_login' %}">
+                <h3>{% trans "Sign In" %}</h3>
+                <p>{% blocktrans %}Welcome back to the 15th Dartford Scout groups online badge manager, please sign in...
+                    If you have not yet created your free account you can create one here. <a class="link" href="{{ signup_url }}">sign up</a>
+                    {% endblocktrans %}
+                </p>
+
                 {% csrf_token %}
                 {{ form.as_p }}
                 {% if redirect_field_value %}
