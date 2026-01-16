@@ -27,11 +27,11 @@
 
     <!-- SCOUT LIST -->
     <h3>Scouts</h3>
-    
+
     {% if scouts %}
     <ul>
         {% for profile in scouts %}
-        <li>{{ profile.user.username }} <span class="text-muted">{{ profile.patrol.name | default:"Unnasigned" }}</span></li>
+        <li>{{ profile.user.first_name }} {{ profile.user.last_name }} | <span class="text-muted">{{ profile.patrol.name | default:"Unnasigned" }} patrol</span></li>
         {% endfor %}
     </ul>
     {% endif %}

@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 class Patrols(models.Model):
     name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return f"{self.name} Patrol"
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     role = models.CharField(max_length=20)
