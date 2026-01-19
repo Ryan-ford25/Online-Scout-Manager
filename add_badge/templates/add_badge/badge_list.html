@@ -13,8 +13,7 @@
                         <div class="card-body">
                             <div class="image-container">
                                 <a href="{% url 'badge_detail' badge.slug %}" class="badge-link">
-                                    <h2 class="card-title">
-                                        <img class="scale" src="{{ badge.image.url }}"></h2>
+                                    <img class="scale" src="{{ badge.image.url }}" alt="{{badge.name}}">
                             </a>
                                 <div class="image-flash">
                                     <p class="name">Badge: {{ badge.name }}</p>

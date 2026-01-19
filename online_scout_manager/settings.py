@@ -73,8 +73,8 @@ ACCOUNT_FORMS = {
 ACCOUNT_ADAPTER = "accounts.adapters.CustomAccountAdapter"
 
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'dashboard/'
+LOGOUT_REDIRECT_URL = 'dashboard/'
 ACCOUNT_SIGNUP_REDIRECT_URL = '/signup/redirect/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

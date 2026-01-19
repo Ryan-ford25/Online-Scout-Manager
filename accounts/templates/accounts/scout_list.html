@@ -16,7 +16,7 @@
     <tbody>
         {% for profile in scouts %}
         <tr>
-            <td> {{ profile.user.username }}</td>
+            <td> {{ profile.user.first_name }} {{ profile.user.last_name }}</td>
             <td> {{ profile.patrol.name | default:"Unnasigned" }}</td>
             <td>
                 <form method="post" action="{% url 'assign_patrol' profile.id %}">
