@@ -38,6 +38,14 @@
                 <a href="{% url 'account_signup' %}" class="btn btn-outline-secondary">Sign Up</a>
             </div>
             {% endif %}
+
+            <div>
+                {% if user.is_authenticated %}
+                <p>Welcome back {{ user.first_name }}</p>
+                <a href="{% url 'signup_redirect' %}" class="btn btn-primary me-2">Dashboard</a>
+                <a href="{% url 'account_logout' %}" class="btn btn-outline-secondary">Logout</a>
+                {% endif %}
+            </div>
         </div>
 
     </main>
