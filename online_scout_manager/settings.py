@@ -30,7 +30,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
 
 
@@ -74,7 +74,7 @@ ACCOUNT_ADAPTER = "accounts.adapters.CustomAccountAdapter"
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = 'dashboard/'
-LOGOUT_REDIRECT_URL = 'dashboard/'
+LOGOUT_REDIRECT_URL = 'home'
 ACCOUNT_SIGNUP_REDIRECT_URL = '/signup/redirect/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

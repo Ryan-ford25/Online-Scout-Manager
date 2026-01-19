@@ -14,7 +14,7 @@ def scout_dashboard(request):
 
 @login_required
 def home(request):
-    return render(request, 'dashboard/default_dash.html')
+    return render(request, 'dashboard/home.html')
 
 @login_required
 def leader_dashboard(request):
