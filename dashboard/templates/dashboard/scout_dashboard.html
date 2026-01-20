@@ -15,7 +15,7 @@
         <div class="row">
             {% for scout_badge in featured_badges %}
             <div class="col-md-4 text-center">
-                <img src="{{ scout_badge.badge.image.url }}" class="img-fluid mb-2" width="100px">
+                <img src="{{ scout_badge.badge.image.url }}" alt="{{ badge.name }}" class="img-fluid mb-2" width="100px">
             </div>
             {% empty %}
             <p>No featured badges selected.</p>
