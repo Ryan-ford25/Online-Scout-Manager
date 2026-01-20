@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 import os
 import dj_database_url
 if os.path.isfile('env.py'):
@@ -32,6 +35,14 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1']
+
+#cloudinary config
+cloudinary.config(
+    cloud_name = "dv4rajgx6",
+    api_key = "198961929335267",
+    api_secret = "Bj5rqWE4EzYHfx0bafMO-isFGX4",
+    secure = True
+)
 
 
 # Application definition
@@ -174,7 +185,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
-    "https://*.herokuapp.com"
+    "https://*.herokuapp.com",
 ]
-
-X_FRAME_OPTIONS = 'ALLOWALL'

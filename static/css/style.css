@@ -50,6 +50,11 @@ nav{
     background-color: #188181;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .scale {
     width: 200px;
     height: auto;
