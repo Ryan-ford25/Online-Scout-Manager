@@ -72,15 +72,6 @@ img {
     text-transform: uppercase;
 }
 
-.masthead {
-    margin-top: 10px;
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
-    height: 33vh;
-    width: 100%;
-}
-
 .masthead-text {
     background-color: #445261;
     color: white;
