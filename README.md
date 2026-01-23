@@ -1,4 +1,4 @@
-# <span style="color: #4f9aff">Echoes of Light</span>
+# <span style="color: #4f9aff">Online Scout Manager</span>
 
 ---
 
@@ -30,21 +30,21 @@ The focus of this site was to implement the django framework and python on the b
     - [Desktop Wireframes](#desktop-frames)
   - [Features](#features)
       - [Site Pages](#site-pages)
-        -[Home Page](#the-home-screen)
-        -[Scout Dashboard](#the-scout-dashboard)
-        -[Leader Dashboard](#the-leader-dashboard)
-        -[Badges Page](#the-badges-page)
-        -[Badge Detail Page](#the-badge-detail-page)
-        -[Add Badge Page](#the-add-badge-page)
-        -[Edit Badge Page](#the-edit-badge-page)
-        -[Blog Page](#the-blog-page)
-        -[Blog Post Page](#the-blog-post-page)
-        -[Create Post Page](#the-create-post-page)
-        -[Manage Scouts Page](#the-manage-scouts-page)
-        -[Login Page](#the-login-page)
-        -[Signup Page](#the-signup-page)
-        -[Logout Page](#the-logout-page)
-      -[Future Features](#future-implementations)
+        - [Home Page](#the-home-screen)
+        - [Scout Dashboard](#the-scout-dashboard)
+        - [Leader Dashboard](#the-leader-dashboard)
+        - [Badges Page](#the-badges-page)
+        - [Badge Detail Page](#the-badge-detail-page)
+        - [Add Badge Page](#the-add-badge-page)
+        - [Edit Badge Page](#the-edit-badge-page)
+        - [Blog Page](#the-blog-page)
+        - [Blog Post Page](#the-blog-post-page)
+        - [Create Post Page](#the-create-post-page)
+        - [Manage Scouts Page](#the-manage-scouts-page)
+        - [Login Page](#the-login-page)
+        - [Signup Page](#the-signup-page)
+        - [Logout Page](#the-logout-page)
+      - [Future Features](#future-implementations)
 
 -[Database]
 
