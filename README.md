@@ -15,10 +15,10 @@ The focus of this site was to implement the django framework and python on the b
 
 ## CONTENTS
 
-- [User Experience](#ux)
+* [User Experience](#ux)
   - [User Stories](#user-stories)
 
-- [Design](#Design)
+* [Design](#Design)
   - [Colour Scheme](#colour-scheme)
   - [Typography](#typography)
   - [Imagery](#imagery)
@@ -28,7 +28,7 @@ The focus of this site was to implement the django framework and python on the b
     - [Mobile Wireframes](#mobile-frames)
     - [Tablet Wireframes](#tablet-frames)
     - [Desktop Wireframes](#desktop-frames)
-  - [Features](#features)
+  * [Features](#features)
       - [Site Pages](#site-pages)
         - [Home Page](#the-home-screen)
         - [Scout Dashboard](#the-scout-dashboard)
@@ -44,31 +44,33 @@ The focus of this site was to implement the django framework and python on the b
         - [Login Page](#the-login-page)
         - [Signup Page](#the-signup-page)
         - [Logout Page](#the-logout-page)
-      - [Future Features](#future-implementations)
+      - [Role Dependant Features](#role-dependant-features)
+        - [Scout vs Leader Navigation](#scout-vs-leader-navigation-bar)
+        - [Scout vs Leader Dashboard](#scout-vs-leader-dashboard)
+      - [Future Implementations](#future-implementations)
 
--[Database]
+* [Database Design](#database-design)
+* [Agile Development Process](#agile-development-process)
+  - [Github Projects](#github-projects)
+* [Testing](#testing-readme)
 
 * [Technologies Used](#technologies)
 
   - [Languages Used](#languages)
   - [Frameworks, Libraries & Programs Used](#frameworks)
 
-* [Deployment & Local Development](#deployment-development)
+* [Deployment](#deployment)
+  - [Heroku Deployment](#heroku-deployment)
 
-  - [Deployment](#development)
-  - [Local Development](#local-development)
+* [Local Development](#local-development)
+    - [How to Clone](#clone)
     - [How to Fork](#fork)
-    - [How to clone](#clone)
 
-* [Testing](#testing-readme)
 
-  - [Solved Issues & Bugs](#solved-issues)
-  - [Known Issues & Bugs](#known-issues)
-
-* [Credits & Inspiration](#credits&inspiration)
+* [Credits & Inspiration](#credit-and-inspiration)
+  - [Code](#code)
   - [Content](#content)
-  - [Media](#media)
-  - [Acknowledgement](#acknowledgement)
+  - [Acknowledgements](#acknowledgements)
 
 ---
 
@@ -727,7 +729,7 @@ Scout Dashboard
 
 Leader Dashboard
 <br>
-<img src="assets/documentation/Leader-dashboard-ss.png" width=500 alt="Leader dashboard screenshot"></img>
+<img src="assets/documentation/leader-dashboard-ss.png" width=500 alt="Leader dashboard screenshot"></img>
 
 ---
 
@@ -955,22 +957,30 @@ You can fork this repository by using the following steps:
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Ryan-ford25/Milestone_project3)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
 ---
 
-<a id=credits></a>
+<a id=credit-and-inspiration></a>
 
->
+## Credit and Inspiration
+---
+
+<a id=code></a>
+
 ### Code
  * Another README guide was provided by the Slack community [Youtube video](https://www.youtube.com/watch?v=l1DE7L-4eKQ)
  * I used [stackoverflow](https://stackoverflow.com/questions/75045074/how-are-adapters-used-in-django-allauth) to learn about allauth adapters. In my case I made a custom adapter to redirect users with role of Scout to the scout dashboard template.
  * [Django documentation](https://docs.djangoproject.com/en/6.0/) had been used to explain inline formsets and how a parent and child model can be linked within a single form.
 
-### Content
+<a id=content></a>
 
+### Content
  * All content was written by the developer.
  * [Color contrast checker](https://coolors.co/contrast-checker/112a46-acc8e5) was used to check if the color scheme chosen would work well.
 
-## Acknowledgements
+<a id=acknowledgements></a>
+
+### Acknowledgements
  * Discord Community for encouragement and information.
  * My teacher Kevin provided me with help along the way.
  * The Discord community helped with providing examples of README files.
