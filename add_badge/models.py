@@ -32,20 +32,9 @@ class BadgeRequest(models.Model):
         ('rejected', 'Rejected'),
     ]
 
-    scout = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        related_name="badge_requests"
-    )
-    badge = models.ForeignKey(
-        "add_badge.Badge",
-        on_delete=models.CASCADE
-    )
-    status = models.CharField(
-        max_length=10,
-        choices=STATUS_CHOICES,
-        default='pending'
-    )
+    scout = models.ForeignKey(User,on_delete=models.CASCADE,related_name="badge_requests")
+    badge = models.ForeignKey("add_badge.Badge",on_delete=models.CASCADE)
+    status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='pending')
     note = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -56,10 +45,7 @@ class BadgeRequest(models.Model):
         self.status = "approved"
         self.save(update_fields=["status"])
 
-        ScoutBadge.objects.get_or_create(
-            scout = self.scout,
-            badge = self.badge
-        )
+        ScoutBadge.objects.get_or_create(scout = self.scout, badge = self.badge)
 
     def reject(self):
         if self.status == "rejected":
