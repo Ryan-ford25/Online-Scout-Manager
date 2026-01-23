@@ -1,4 +1,4 @@
-# <span style="color: #4f9aff">Online Scout Manager</span>
+# <span style="color: #4f9aff">Echoes of Light</span>
 
 ---
 
