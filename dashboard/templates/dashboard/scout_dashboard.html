@@ -15,7 +15,7 @@
         <div class="row">
             {% for scout_badge in featured_badges %}
             <div class="col-md-4 text-center">
-                <img src="{{ scout_badge.badge.image.url }}" alt="{{ badge.name }}" class="img-fluid mb-2" width="100px">
+                <img src="{{ scout_badge.badge.image.url }}" alt="{{ badge.name }}" class="img-fluid mb-2" width="100">
             </div>
             {% empty %}
             <p>No featured badges selected.</p>
@@ -36,8 +36,8 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">{{ earned.badge.name }}</h5>
-                        <img src="{{ earned.badge.image.url }}" alt="{{ badge.name }}" width="100px">
+                        <h4 class="card-title">{{ earned.badge.name }}</h4>
+                        <img src="{{ earned.badge.image.url }}" alt="{{ badge.name }}" width="100">
                         <form method="post" action="{% url 'featured_badge' earned.id %}">
                             {% csrf_token %}
                             <button class="btn btn-signup">
@@ -53,9 +53,9 @@
             </div>
             {% endfor %}
         </div>
-    {% else %}
-    <p>You have not earned any badges yet.</p>
-    {% endif %}
+        {% else %}
+        <p>You have not earned any badges yet.</p>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

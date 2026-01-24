@@ -45,8 +45,8 @@
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">{{ badge.name }}</h5>
-                        <img src="{{ badge.image.url }}" alt="{{ badge.name }}" width="100px">
+                        <h4 class="card-title">{{ badge.name }}</h4>
+                        <img src="{{ badge.image.url }}" alt="{{ badge.name }}" width="100">
                     </div>
                     <div>
                         <a href="{% url 'edit_badge' badge.id %}" class="btn btn-signup">Edit Badge</a>
@@ -57,7 +57,7 @@
             {% endfor %}
         </div>
     </div>
-    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -74,7 +74,6 @@
     </div>
     <a href="{% url 'add_badge' %}" class="btn btn-signup margin">Add Badge</a>
     
-
 </div>
 
 
