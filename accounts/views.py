@@ -41,4 +41,3 @@ def assign_patrol(request, profile_id):
 
     profile.save()
     return redirect("scout_list")
-

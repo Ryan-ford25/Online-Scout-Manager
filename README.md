@@ -4,10 +4,11 @@
 
 ![[15th Dartfords Online Scout Manager]](assets/documentation/am-i-responsive.png)
 
+Visit the deployed site here: [Online Scout Manager](https://online-scout-badge-manager-63d33c684e7e.herokuapp.com/)  
 
 ## Introduction
 
-The focus of this site was to implement the django framework and python on the back-end in order to create a user-friendly site. The site is a badge manager for the 15th Dartford scout group where the group can use the blog page to ask questions and post comments, the leaders can add, edit and delete badges along with manage the scouts and their patrols. While scouts can request to earn specific badges and choose to feature up to three badges on their dashboard. These features follow the CRUD(Create, edit, update and delete) ideology where badges, posts and comments can be edited, deleted or updated. The site has an admin panel with all the above features along with the feature to add/delete patrols and users.
+The focus of this site was to implement the Django framework and python on the back-end in order to create a user-friendly site. The site is a badge manager for the 15th Dartford scout group where the group can use the blog page to ask questions and post comments, the leaders can add, edit and delete badges along with manage the scouts and their patrols. While scouts can request to earn specific badges and choose to feature up to three badges on their dashboard. These features follow the CRUD(Create, edit, update and delete) ideology where badges, posts and comments can be edited, deleted or updated. The site has an admin panel with all the above features along with the feature to add/delete patrols and users.
 
 ---
 
@@ -78,7 +79,7 @@ The focus of this site was to implement the django framework and python on the b
 
 ## User Experience (UX)
 
-The site has been designed soley for the 15th Dartford scout troop. The site offers a simple, modern and proffesional design along with an easy to use interface. The clean UI ensures seamless navigation and accessibility for both Scouts and Leaders.
+The site has been designed solely for the 15th Dartford scout troop. The site offers a simple, modern and professional design along with an easy to use interface. The clean UI ensures seamless navigation and accessibility for both Scouts and Leaders.
 
 <hr>
 
@@ -100,7 +101,7 @@ The site has been designed soley for the 15th Dartford scout troop. The site off
 
 - As a frequent site user, I want a blog page where I can ask questions and comment on others posts so that I can help other scouts with earning new badges.
 
-All user stories can found in the linked GitHub project [here](https://github.com/users/Ryan-ford25/projects/7/views/1?layout=board&visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C%22Linked+pull+requests%22%2C%22Sub-issues+progress%22%2C%22Labels%22%5D)
+All user stories can be found in the linked GitHub project [here](https://github.com/users/Ryan-ford25/projects/7/views/1?layout=board&visibleFields=%5B%22Title%22%2C%22Assignees%22%2C%22Status%22%2C%22Linked+pull+requests%22%2C%22Sub-issues+progress%22%2C%22Labels%22%5D)
 
 ---
 
@@ -113,13 +114,13 @@ All user stories can found in the linked GitHub project [here](https://github.co
 ### Colour Scheme
 
 The primary colours for the site are:
-- `#445261` (Charcoal Blue) – This grounded dark blue is easy on the eyes and is usually associated with trust and reliablity, two qualities that all scouts should have. The color is also modern and proffesional which is why I have used it as the footer as the proffesionalism and modernity aligns with my design for the website.
+- `#445261` (Charcoal Blue) – This grounded dark blue is easy on the eyes and is usually associated with trust and reliablity, two qualities that all scouts should have. The color is also modern and professional which is why I have used it as the footer as the professionalism and modernity aligns with my design for the website.
 
 - `#188181` (Teal): The colour I have chosen as the main colour for the buttons and tags on the webpage is sophisticated and offers a sense of innovation and creative thinking, this aligns well with scouting in general as these are considered core 'Skills for life' which is what scouting gives to young people.
 
 - `#E84610` (Molten orange): Used for the 'Delete' buttons in the webpage as the high saturation orange has signs of caution and alertness making the user aware that the button would be destructive.
 
-This colour scheme presents a modern and proffesional aesthetic aligning perfectly with the ideals of scouting and specifically the 15th Dartford scout troop.
+This colour scheme presents a modern and professional aesthetic aligning perfectly with the ideals of scouting and specifically the 15th Dartford scout troop.
 
 <details>
 <summary>- Toggle the arrow to view the colour swatches</summary>
@@ -323,7 +324,7 @@ All Pages on the website are responsive and have:
   - Login button: Allows the user to sign in with an account they have previously created.
   - Signup button: The user can create an account if they haven't got one already.
 
-The homepage is a quick and simple message of what can be done on the site. The lack of clutter and guided ui elements such as the "Login" button takes the user directly to the core functions of the site such as 'Tracking badges'.
+The homepage is a quick and simple message of what can be done on the site. The lack of clutter and guided UI elements such as the "Login" button takes the user directly to the core functions of the site such as 'Tracking badges'.
 
 ---
 
@@ -396,7 +397,7 @@ The homepage is a quick and simple message of what can be done on the site. The 
 - Interactive Elements:
   - Each badge can be interacted with to take the user to its own page which displays the requirements for the badge.
 
-The Badge page follows the simplistic and modern design from the rest of the website and displays each badge clearly with its name and image in a grid format which will accommodate for growth as more badges are added without the page becoming an endless and tiring vertical list. It shows proffesionalism and structure aligning well with the scout troops needs.
+The Badge page follows the simplistic and modern design from the rest of the website and displays each badge clearly with its name and image in a grid format which will accommodate for growth as more badges are added without the page becoming an endless and tiring vertical list. It shows professionalism and structure aligning well with the scout troops needs.
 
 ---
 
@@ -415,7 +416,7 @@ The Badge page follows the simplistic and modern design from the rest of the web
   - Displays a specific badge with its name, description, image and requirements.
 - User Benefits:
   - Easy to read.
-  - No exccessive amounts of text.
+  - No excessive amounts of text.
 
 The Badge Detail page yet again follows the simple design and gets straight to the point displaying only the necessary information needed for each badge, this ensures the user can immediately understand the net steps and get to work on achieving the badge.
 
@@ -570,7 +571,7 @@ The Create post page is a clear and easy to read form. Very similar to that of t
   - Drop down menu: For each scout there is a drop down menu that provides a list of patrols to select from.
   - 'Save' button: Used to save the newly appointed patrol to the scout in the database.
 
-The Manage Scouts Page also follows the simplistic modern design with an easy to read table. In the table is a column labeled 'Assign Patrol' which provides the Leader with an easy to use dropdown list of patrols, the leader can select one of the patrols and interact with the 'Save' button to save the new value assigning the Scout to their new Patrol. This is also then updated on the leaders dashboard aswell so that the data is consistent accross the website.
+The Manage Scouts Page also follows the simplistic modern design with an easy to read table. In the table is a column labeled 'Assign Patrol' which provides the Leader with an easy to use dropdown list of patrols, the leader can select one of the patrols and interact with the 'Save' button to save the new value assigning the Scout to their new Patrol. This is also then updated on the leaders dashboard as well so that the data is consistent across the website.
 
 ---
 
@@ -709,7 +710,7 @@ Users who are logged in can easily log out in order to stop access to their acco
 
 #### Scout vs Leader Navigation bar
 
-Users who have created their account with the role of 'Scout' will have the 'Manage Scouts' tab removed from their naviation bar as this feature is only used by users with the role of 'Leader' as they are permitted to view the list of scouts within the troop.
+Users who have created their account with the role of 'Scout' will have the 'Manage Scouts' tab removed from their navigation bar as this feature is only used by users with the role of 'Leader' as they are permitted to view the list of scouts within the troop.
 
 
 ![Leader Navigation bar screenshot](assets/documentation/leader-nav-ss.png)
@@ -818,7 +819,7 @@ User issues were created and issues and tasks were planned and referred back to 
 
 - [Google Developer Tools](https://developers.google.com/web/tools) - To troubleshoot and test features, solve issues with responsiveness and styling.
 
-- [Bootstrap](https://getbootstrap.com/) - To apply styling to buttons without having to worry about doing all the css myself allowing me to focus on the JavaScript.
+- [Bootstrap](https://getbootstrap.com/) - To apply styling to buttons without having to worry about doing all the css myself allowing me to focus on the backend logic and application functionality.
 
 - [BrowserStack](https://live.browserstack.com/) - To test my website on other browsers used by other operating systems such as the MacOs and safari.
 

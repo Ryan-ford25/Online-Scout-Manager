@@ -3,18 +3,21 @@ from django.contrib.auth.decorators import login_required
 from add_badge.models import ScoutBadge, BadgeRequest, Badge
 from accounts.models import Profile
 
+
 @login_required
 def scout_dashboard(request):
     earned_badges = ScoutBadge.objects.filter( scout=request.user).select_related("badge")
     featured_badges = earned_badges.filter(featured=True)
     return render(request, 'dashboard/scout_dashboard.html', {
         'earned_badges': earned_badges,
-        'featured_badges' : featured_badges,
+        'featured_badges': featured_badges,
         })
+
 
 @login_required
 def home(request):
     return render(request, 'dashboard/home.html')
+
 
 @login_required
 def leader_dashboard(request):

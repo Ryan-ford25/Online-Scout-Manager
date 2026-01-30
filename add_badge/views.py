@@ -8,10 +8,12 @@ from django.utils.text import slugify
 from django.http import HttpResponseRedirect
 # Create your views here.
 
+
 class BadgeList(generic.ListView):
     queryset = Badge.objects.all()
     template_name = "badge_list.html"
     context_object_name = 'badges'
+
 
 @login_required
 def request_badge(request, badge_id):
@@ -31,11 +33,13 @@ def request_badge(request, badge_id):
         )
     return redirect("badge_detail", slug=badge.slug)
 
+
 @login_required
 def approve_badge_request(request, request_id):
     badge_request = get_object_or_404(BadgeRequest, id=request_id)
     badge_request.approve()
     return redirect("dashboard:leader")
+
 
 @login_required
 def reject_badge_request(request, request_id):
@@ -53,11 +57,10 @@ def badge_detail(request, slug):
     has_pending_request = False
 
     if request.user.is_authenticated:
-        has_badge = ScoutBadge.objects.filter( 
+        has_badge = ScoutBadge.objects.filter(
             scout=request.user,
             badge=badge
         ).exists()
-        
         has_pending_request = BadgeRequest.objects.filter(
             scout=request.user,
             badge=badge,
@@ -69,11 +72,12 @@ def badge_detail(request, slug):
         "add_badge/badge_detail.html",
         {
             "badge": badge,
-            "requirements":requirements,
+            "requirements": requirements,
             'has_badge': has_badge,
             "has_pending_request": has_pending_request,
         },
     )
+
 
 @login_required
 def add_badge(request):
@@ -82,7 +86,7 @@ def add_badge(request):
         requirements_formset = BadgeRequirementFormSet(request.POST)
 
         if badge_form.is_valid() and requirements_formset.is_valid():
-            new_badge = badge_form.save(commit= False)
+            new_badge = badge_form.save(commit=False)
             new_badge.slug = slugify(new_badge.name)
             new_badge.save()
 
@@ -93,14 +97,14 @@ def add_badge(request):
                 request, messages.SUCCESS, 'New badge created.'
             )
             return redirect("badges")
-        
     badge_form = BadgeForm()
     requirements_formset = BadgeRequirementFormSet()
 
     return render(request, "add_badge/add_badge.html", {
-        "badge_form" : badge_form,
-        "requirements_formset" : requirements_formset,
+        "badge_form": badge_form,
+        "requirements_formset": requirements_formset,
         })
+
 
 @login_required
 def edit_badge(request, badge_id):
@@ -109,8 +113,9 @@ def edit_badge(request, badge_id):
     # Initialize forms with existing data
     if request.method == "POST":
         badge_form = BadgeForm(request.POST, request.FILES, instance=badge)
-        requirements_formset = BadgeRequirementFormSet(request.POST, instance=badge)
-
+        requirements_formset = BadgeRequirementFormSet(
+            request.POST,
+            instance=badge)
         if badge_form.is_valid() and requirements_formset.is_valid():
             updated_badge = badge_form.save(commit=False)
             updated_badge.slug = slugify(updated_badge.name)
@@ -119,7 +124,6 @@ def edit_badge(request, badge_id):
 
             messages.success(request, "Badge updated successfully!")
             return redirect("badges")
-        
     badge_form = BadgeForm(instance=badge)
     requirements_formset = BadgeRequirementFormSet(instance=badge)
 
@@ -129,30 +133,30 @@ def edit_badge(request, badge_id):
         "badge": badge,
     })
 
+
 def delete_badge(request, badge_id):
     badge = get_object_or_404(Badge, id=badge_id)
-    
     badge.delete()
     messages.success(request, "The Badge has been deleted successfully!")
     return redirect("badges")
 
+
 def featured_badges(request, scout_badge_id):
     scout_badge = get_object_or_404(
         ScoutBadge,
-        id = scout_badge_id,
-        scout = request.user,
+        id=scout_badge_id,
+        scout=request.user,
     )
 
     if not scout_badge.featured:
         featuredbadge_count = ScoutBadge.objects.filter(
-            scout = request.user,
-            featured = True
+            scout=request.user,
+            featured=True
         ).count()
 
         if featuredbadge_count >= 3:
             messages.error(request, "Only 3 badges can be featured at a time.")
             return redirect("dashboard:scout")
-        
     scout_badge.featured = not scout_badge.featured
     scout_badge.save()
 
