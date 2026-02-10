@@ -1,3 +1,5 @@
 .venv
 env.py
 blog/fixtures/
+db.sqlite3
+__pycache__/
